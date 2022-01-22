@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Near Labs</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_example">Ex. (373) 378 8383</string>
+    <string name="get_started">Get Started</string>
+    <string name="already_have_near_account_">Already have Near Account?</string>
+    <string name="walletname_near">walletName.near</string>
+    <string name="login">Login</string>
+    <string name="t_and_c_privacy_policy_text">by clicking continue you must agree to near labs <a href="https://www.google.com/search?q=terms+and+conditions">Terms &amp; Conditions</a> and <a href="https://www.google.com/search?q=privacy+policy">Privacy Policy</a></string>
+    <string name="this_field_is_required_to_continue">This field is required to continue</string>
 </resources>
