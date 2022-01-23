@@ -9,5 +9,29 @@
     <string name="walletname_near">walletName.near</string>
     <string name="login">Login</string>
     <string name="t_and_c_privacy_policy_text">by clicking continue you must agree to near labs <a href="https://www.google.com/search?q=terms+and+conditions">Terms &amp; Conditions</a> and <a href="https://www.google.com/search?q=privacy+policy">Privacy Policy</a></string>
+    <string name="t_and_c_create_wallet_privacy_policy_text">By creating a NEAR account, you agree to the NEAR Wallet <a href="https://www.google.com/search?q=terms+of+service">Terms of Service</a> and <a href="https://www.google.com/search?q=privacy+policy">Privacy Policy</a></string>
     <string name="this_field_is_required_to_continue">This field is required to continue</string>
+    <string name="verification">Verification</string>
+    <string name="enter_verification_code">Enter verification code</string>
+    <string name="continue_text">Continue</string>
+    <string name="didn_t_receive_your_code">Didn\'t receive your code?</string>
+    <string name="send_to_a_different_email_address">Send to a different email address</string>
+    <string name="send_to_a_different_phone_number">Send to a different phone number</string>
+    <string name="resend_your_code">Resend your code</string>
+    <string name="sent_code_email"><![CDATA[We\'ve sent a 6-digit verification code to the email address <br><b><font color=#2F80ED>\n%1$s</font></b></br>]]></string>
+    <string name="sent_code_phone"><![CDATA[We\'ve sent a 6-digit verification code to the phone number <br><b><font color=#2F80ED>\n%1$s</font></b></br>]]></string>
+    <string name="verification_code_incorrect">Verification code is incorrect</string>
+    <string name="code_sent">Code sent!</string>
+    <string name="verification_code_too_short">Verification code is too short</string>
+    <string name="enter_an_account_id_to_use_with_your_near_account_your_account_id_will_be_used_for_all_near_operations_including_sending_and_receiving_assets">Enter an Account ID to use with your NEAR account. Your Account ID will be used for all NEAR operations, including sending and receiving assets.</string>
+    <string name="full_name">Full Name</string>
+    <string name="ex_john_doe">Ex. John Doe</string>
+    <string name="wallet_id">Wallet ID</string>
+    <string name="info">info</string>
+    <string name="yourname_near">yourname.near</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="login_with_near">Login with NEAR</string>
+    <string name="create_near_account">Create NEAR Account</string>
+    <string name="wallet_id_description">Some explanation for Wallet ID and its use</string>
+    <string name="ok">OK</string>
 </resources>

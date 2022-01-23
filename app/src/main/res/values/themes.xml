@@ -17,7 +17,7 @@
     <style name="Theme.NearLabs.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="TextRadioButtonStyle" parent="Theme.AppCompat.Light">
@@ -42,7 +42,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginStart">16dp</item>
         <item name="android:layout_marginEnd">16dp</item>
-        <item name="android:background">@drawable/bg_input_edit_text</item>
+        <item name="android:background">@drawable/bg_input_edit_text_active</item>
         <item name="android:textColorHint">@color/gray_3</item>
         <item name="android:textColor">@color/gray_2</item>
         <item name="android:textSize">16sp</item>
@@ -52,6 +52,20 @@
         <item name="android:paddingBottom">16dp</item>
         <item name="android:fontFamily">@font/inter_regular</item>
         <item name="android:inputType">text</item>
+    </style>
+
+    <style name="EditTextSquareInput" parent="TextAppearance.AppCompat">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:background">@drawable/bg_input_edit_text_active</item>
+        <item name="android:textColorHint">@color/gray_3</item>
+        <item name="android:textColor">@color/gray_2</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:inputType">number</item>
     </style>
 
     <style name="ActionButton" parent="TextAppearance.AppCompat">
@@ -81,6 +95,36 @@
         <item name="android:fontFamily">@font/inter_regular</item>
     </style>
 
+    <style name="ActiveTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/blue_1</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/ripple_simple_bg</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="MediumTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:fontFamily">@font/inter_medium</item>
+    </style>
+
+    <style name="SemiBoldTextStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_color_black</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+    </style>
+
     <style name="ErrorStyle" parent="TextAppearance.AppCompat">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/error_red</item>
@@ -95,4 +139,13 @@
         <item name="android:layout_marginEnd">16dp</item>
         <item name="android:fontFamily">@font/inter_regular</item>
     </style>
+
+    <style name="AppTheme.AlertDialogStyle" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColorPrimary">@color/text_color_black</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textColor">@null</item>
+    </style>
+
 </resources>

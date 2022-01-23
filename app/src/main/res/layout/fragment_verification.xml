@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/verificationTV"
+            style="@style/MediumTextStyle"
+            android:layout_gravity="center"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            tools:text="We\'ve sent a 6-digit verification code to the email address \njohndoe@gmail.com" />
+
+        <TextView
+            style="@style/RegularTextStyle"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="@string/enter_verification_code"
+            android:textColor="@color/gray_3" />
+
+        <LinearLayout
+            android:id="@+id/verificationInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/ver1"
+                style="@style/EditTextSquareInput"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:maxLength="2" />
+
+            <EditText
+                android:id="@+id/ver2"
+                style="@style/EditTextSquareInput"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:maxLength="2" />
+
+            <EditText
+                android:id="@+id/ver3"
+                style="@style/EditTextSquareInput"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:maxLength="2" />
+
+            <EditText
+                android:id="@+id/ver4"
+                style="@style/EditTextSquareInput"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:maxLength="2" />
+
+            <EditText
+                android:id="@+id/ver5"
+                style="@style/EditTextSquareInput"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:maxLength="2" />
+
+            <EditText
+                android:id="@+id/ver6"
+                style="@style/EditTextSquareInput"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:maxLength="2" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/verificationError"
+            style="@style/ErrorStyle"
+            android:text="@string/verification_code_incorrect"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/continueBtn"
+            style="@style/ActionButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/continue_text"
+            app:drawableEndCompat="@drawable/ic_arrow_forward" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            android:background="@color/gray_4" />
+
+        <TextView
+            style="@style/RegularTextStyle"
+            android:layout_gravity="center"
+            android:text="@string/didn_t_receive_your_code" />
+
+        <TextView
+            android:id="@+id/sendToDifferentEmail"
+            style="@style/ActiveTextStyle"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/send_to_a_different_email_address" />
+
+        <TextView
+            android:id="@+id/resendCode"
+            style="@style/ActiveTextStyle"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/resend_your_code" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
