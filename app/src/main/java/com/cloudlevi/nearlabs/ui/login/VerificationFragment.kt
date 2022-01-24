@@ -26,6 +26,7 @@ class VerificationFragment :
     private lateinit var parentFragment: LoginFragment
 
     private var listOfVerificationInputs = listOf<EditText>()
+    private var isVerificationStylValid = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -60,11 +61,10 @@ class VerificationFragment :
                         nextEditText?.setText(s)
                         nextEditText?.setSelection(s.length)
                     } else nextEditText?.requestFocusAtStart()
+                }, afterInputCallback = {
+                    viewModel.afterVerificationCodeInputCheck(collectCodeInput())
                 }))
-                eText.onSingleCharDeleteListener(
-                    listOfVerificationInputs.getOrNull(i - 1),
-                    i - 1
-                )
+                eText.onSingleCharDeleteListener(listOfVerificationInputs.getOrNull(i - 1))
             }
 
             sendToDifferentEmail.setOnClickListener {
@@ -117,6 +117,14 @@ class VerificationFragment :
         when (a.type) {
             UPDATE_CHILDREN -> onUpdateChildren(a.childID ?: 0)
             CODE_VERIFICATION_ERROR -> onVerificationResult()
+            VERIFICATION_STYLE_VALID -> onVerificationStyleValid(a.bool ?: false)
+        }
+    }
+
+    private fun onVerificationStyleValid(isValid: Boolean) {
+        if (isVerificationStylValid != isValid){
+            isVerificationStylValid = isValid
+            animateActivationChange(binding.continueBtn, isVerificationStylValid)
         }
     }
 

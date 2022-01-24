@@ -1,7 +1,10 @@
 package com.cloudlevi.nearlabs.core
 
+import android.animation.ArgbEvaluator
+import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
 import android.content.Context
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +17,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.cloudlevi.nearlabs.R
@@ -94,6 +98,28 @@ abstract class BaseFragment<VB : ViewBinding>(@LayoutRes layoutID: Int) : Fragme
             it.duration = 100
             it.addUpdateListener { vA ->
                 imageView.setColorFilter(vA.animatedValue as Int)
+            }
+            it.start()
+        }
+    }
+
+    protected fun animateActivationChange(button: View, isActivated: Boolean) {
+        val startColor = ContextCompat.getColor(
+            requireContext(),
+            if (isActivated) R.color.gray_4 else R.color.black
+        )
+        val endColor = ContextCompat.getColor(
+            requireContext(),
+            if (isActivated) R.color.black else R.color.gray_4
+        )
+
+        ObjectAnimator.ofObject(ArgbEvaluator(), startColor, endColor).also {
+            it.duration = 150
+            it.addUpdateListener { vA ->
+                ViewCompat.setBackgroundTintList(
+                    button,
+                    ColorStateList.valueOf(vA.animatedValue as Int)
+                )
             }
             it.start()
         }

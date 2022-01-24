@@ -37,6 +37,8 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     private lateinit var signUpTextWatcher: SignUpTextWatcher
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<RelativeLayout>
 
+    private var isGetStartedActive = false
+
     private val signUpPagerAdapter: SignUpViewPagerAdapter by lazy {
         SignUpViewPagerAdapter(this, SIGN_UP_PAGE_COUNT)
     }
@@ -180,7 +182,15 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     private fun doAction(a: LoginViewModel.Action) {
         when (a.type) {
             CODE_VERIFICATION_SUCCESS -> onCodeVerificationSuccess()
+            GET_STARTED_VALID -> onGetStartedValid(a.bool?: false)
             else -> {}
+        }
+    }
+
+    private fun onGetStartedValid(isValid: Boolean){
+        if (isGetStartedActive != isValid){
+            isGetStartedActive = isValid
+            animateActivationChange(binding.signUpBtn, isGetStartedActive)
         }
     }
 

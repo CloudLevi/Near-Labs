@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
 import com.cloudlevi.nearlabs.R
 import com.cloudlevi.nearlabs.core.BaseFragment
@@ -23,6 +24,7 @@ class CreateAccountFragment :
 
     private lateinit var parentFragment: LoginFragment
     private lateinit var viewModel: LoginViewModel
+    private var isContinueActivated = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,6 +47,9 @@ class CreateAccountFragment :
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
+            fullNameInput.setText(viewModel.createAccountFullName)
+            walletIDInput.setText(viewModel.createAccountNearWallet)
+
             fullNameInput.setOnFocusChangeListener { view, b ->
                 changeTVFocus(b, fullNameHint)
             }
@@ -56,6 +61,14 @@ class CreateAccountFragment :
 
             createAnAccountBtn.setOnClickListener {
                 onCreateAccountClick()
+            }
+
+            fullNameInput.addTextChangedListener {
+                viewModel.createAccountFullName = it.toString()
+            }
+
+            walletIDInput.addTextChangedListener {
+                viewModel.createAccountNearWallet = it.toString()
             }
 
             walletInfoIV.setOnClickListener {
@@ -82,13 +95,23 @@ class CreateAccountFragment :
                 walletIDError.makeVisible()
             } else walletIDError.makeGone()
 
+            if (!viewModel.checkCreateAccountInputs()) isError = true
+
             if (!isError) sendLongToast("Passed")
         }
     }
 
     private fun doAction(a: Action) {
         when (a.type) {
+            IS_CREATE_INPUTS_SUFFICIENT -> onCreateAccountSufficient(a.bool ?: false)
             else -> {}
+        }
+    }
+
+    private fun onCreateAccountSufficient(isSufficient: Boolean) {
+        if (isContinueActivated != isSufficient){
+            isContinueActivated = isSufficient
+            animateActivationChange(binding.createAnAccountBtn, isContinueActivated)
         }
     }
 

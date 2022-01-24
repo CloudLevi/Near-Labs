@@ -22,7 +22,8 @@ fun View.makeGone() {
 class MaxLengthListener(
     private var editText: EditText,
     private val callback: (newChar: String?) -> Unit,
-    private var maxLength: Int = 1
+    private var maxLength: Int = 1,
+    private var afterInputCallback: () -> Unit
 ) : TextWatcher {
     
     private var beforeText = ""
@@ -45,6 +46,7 @@ class MaxLengthListener(
         editText.setText(newText)
         editText.setSelection(newText.length)
         editText.addTextChangedListener(this)
+        afterInputCallback()
     }
 
 }
@@ -109,7 +111,7 @@ class SignUpTextWatcher(
     }
 }
 
-fun EditText.onSingleCharDeleteListener(focusTo: EditText?, int: Int) {
+fun EditText.onSingleCharDeleteListener(focusTo: EditText?) {
     this.setOnKeyListener { _, code, e ->
         if(e.action == KeyEvent.ACTION_UP)
             return@setOnKeyListener false
